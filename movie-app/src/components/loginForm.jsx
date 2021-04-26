@@ -20,10 +20,10 @@ state = {
 //     this.username.current.focus();
 //   }
 
- handleChange = (fobj) =>
+ handleChange = ({currentTarget:input}) =>
  {
      const account = {...this.state.account};
-     account.username=fobj.currentTarget.value;
+     account[input.name]=input.value;
      this.setState({account});
  }
 
@@ -35,11 +35,11 @@ state = {
           <div className="form-group">
             <label htmlFor="username">User Name</label>
             {/* <input ref={this.username} type="text" id="username" className="form-control"/> */}
-            <input autoFocus onChange={this.handleChange} type="text" id="username" className="form-control"/>
+            <input autoFocus onChange={this.handleChange} type="text" name="username" id="username" className="form-control"/>
           </div>
           <div className="form-group">
             <label htmlFor="password">Password</label>
-            <input type="text" id="password" className="form-control" />
+            <input onChange={this.handleChange} type="text" name="password" id="password" className="form-control" />
           </div>
           <button className="btn btn-primary">Submit</button>
         </form>
