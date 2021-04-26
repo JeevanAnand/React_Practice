@@ -3,7 +3,9 @@ import React, { Component } from "react";
 class LoginForm extends Component {
 
   state = {
-    account: { username: "", password: "" },
+    // account: { username: "", password: "" },
+    // account: { password: "" },
+    account: { username: null, password: "" }
   };
 
   handleSubmmit = (fobj) => {
@@ -19,6 +21,8 @@ class LoginForm extends Component {
   };
 
   render() {
+      const{account}=this.state;
+
     return (
       <div>
         <h1> Login </h1>
@@ -30,6 +34,7 @@ class LoginForm extends Component {
               onChange={this.handleChange}
               type="text"
               name="username"
+              value={account.username}
               id="username"
               className="form-control"
             />
@@ -39,7 +44,8 @@ class LoginForm extends Component {
             <input
               onChange={this.handleChange}
               type="text"
-              name="passw"
+              name="password"
+              value={account.password}
               id="password"
               className="form-control"
             />
