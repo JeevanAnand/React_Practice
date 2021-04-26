@@ -1,20 +1,17 @@
 import React, { Component } from "react";
 
 class LoginForm extends Component {
-    
-username=React.createRef();
+   username = React.createRef();
 
-handleSubmmit = fobj =>{
-    
+  handleSubmmit = (fobj) => {
     fobj.preventDefault();
     console.log("Handling form submit ");
+  };
 
-}
-
-componentDidMount(){
+  componentDidMount() {
     this.username.current.focus();
-}
-    
+  }
+
   render() {
     return (
       <div>
@@ -22,13 +19,18 @@ componentDidMount(){
         <form onSubmit={this.handleSubmmit}>
           <div className="form-group">
             <label htmlFor="username">User Name</label>
-            <input ref={this.username} type="text" id="username" className="form-control" />
+            <input
+              ref={this.username}
+              type="text"
+              id="username"
+              className="form-control"
+            />
           </div>
           <div className="form-group">
             <label htmlFor="password">Password</label>
-            <input type="text"  id="password" className="form-control" />
-            </div>
-            <button className="btn btn-primary">Submit</button>
+            <input type="text" id="password" className="form-control" />
+          </div>
+          <button className="btn btn-primary">Submit</button>
         </form>
       </div>
     );
