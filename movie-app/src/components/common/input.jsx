@@ -17,3 +17,4 @@ const Input = ({ onChange, name, value, label,error}) => {
 };
 
 export default Input;
+

@@ -32,6 +32,8 @@ class LoginForm extends Component {
     }
   };
 
+//npm i joi-browser@1.4
+
   handleSubmmit = (fobj) => {
     fobj.preventDefault();
     const errors = this.validate();
