@@ -2,30 +2,21 @@ import React, { Component } from "react";
 
 class LoginForm extends Component {
 
-//    username = React.createRef();
-
-state = {
-    account: {username:'', password:''}
-}
+  state = {
+    account: { username: "", password: "" },
+  };
 
   handleSubmmit = (fobj) => {
     fobj.preventDefault();
     console.log("Handling form submit ");
     console.log(this.state.account);
-    // const username=this.username.current.value;
-    // console.log(username);
   };
 
-//   componentDidMount() {
-//     this.username.current.focus();
-//   }
-
- handleChange = ({currentTarget:input}) =>
- {
-     const account = {...this.state.account};
-     account[input.name]=input.value;
-     this.setState({account});
- }
+  handleChange = ({ currentTarget: input }) => {
+    const account = { ...this.state.account };
+    account[input.name] = input.value;
+    this.setState({ account });
+  };
 
   render() {
     return (
@@ -34,12 +25,24 @@ state = {
         <form onSubmit={this.handleSubmmit}>
           <div className="form-group">
             <label htmlFor="username">User Name</label>
-            {/* <input ref={this.username} type="text" id="username" className="form-control"/> */}
-            <input autoFocus onChange={this.handleChange} type="text" name="username" id="username" className="form-control"/>
+            <input
+              autoFocus
+              onChange={this.handleChange}
+              type="text"
+              name="username"
+              id="username"
+              className="form-control"
+            />
           </div>
           <div className="form-group">
             <label htmlFor="password">Password</label>
-            <input onChange={this.handleChange} type="text" name="password" id="password" className="form-control" />
+            <input
+              onChange={this.handleChange}
+              type="text"
+              name="passw"
+              id="password"
+              className="form-control"
+            />
           </div>
           <button className="btn btn-primary">Submit</button>
         </form>
