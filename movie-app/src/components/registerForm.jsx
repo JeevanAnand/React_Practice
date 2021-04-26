@@ -9,7 +9,7 @@ class RegisterForm extends Form {
   };
 
   schema={
-      username:Joi.string().required().label('UserName'),
+      username:Joi.string().required().email().label('UserEmail'),
       password:Joi.string().required().label('Password'),
       name:Joi.string().required().label('Name')
 
