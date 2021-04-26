@@ -9,8 +9,8 @@ class LoginForm extends Component {
   };
 
   schema={
-      username:Joi.string().required(),
-      password:Joi.string().required()
+      username:Joi.string().required().label('UserName'),
+      password:Joi.string().required().label('Password')
 
   }
 
@@ -42,15 +42,22 @@ class LoginForm extends Component {
 
   validateProperty = ({ name, value }) => {
     
-    if( name === 'username' )
-    {
-        if (value.trim() === "") return "UserName is required";
-    }
+    // if( name === 'username' )
+    // {
+    //     if (value.trim() === "") return "UserName is required";
+    // }
 
-    if( name === 'password' )
-    {
-        if (value.trim() === "") return "Password is required";
-    }
+    // if( name === 'password' )
+    // {
+    //     if (value.trim() === "") return "Password is required";
+    // }
+
+    const obj={[name]:value}; //[name] is a computed propertyis es6
+    const schema={[name]:this.schema[name]};
+    const{error}=Joi.validate(obj,schema);
+
+    return error? error.details[0].message : null;
+    
   };
 
 //npm i joi-browser@1.4
