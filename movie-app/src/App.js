@@ -11,6 +11,7 @@ import Rentals from './components/rental';
 import NotFound from './components/notFound';
 import MoviesForm from './components/movieForm';
 import LoginForm from './components/loginForm';
+import RegisterForm from './components/registerForm';
 
 function App() {
   return (
@@ -23,7 +24,8 @@ function App() {
           <Route path="/customers" component={Customers} />
           <Route path="/rentals" component={Rentals} />
           <Route path='/not-found' component={NotFound} />
-          <Route path='/loginForm' component={LoginForm} />
+          <Route path='/register' component={RegisterForm} />
+          <Route path='/login' component={LoginForm} />
           <Route path="/" exact component={Movies} />
           <Redirect to='/not-found' />
         </Switch>
