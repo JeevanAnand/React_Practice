@@ -57,7 +57,7 @@ class LoginForm extends Component {
     const{error}=Joi.validate(obj,schema);
 
     return error? error.details[0].message : null;
-    
+
   };
 
 //npm i joi-browser@1.4
@@ -115,7 +115,9 @@ class LoginForm extends Component {
             error={errors.password}
           />
 
-          <button className="btn btn-primary">Submit</button>
+          <button 
+          disabled={this.validate()}    
+          className="btn btn-primary">Submit</button>
         </form>
       </div>
     );
