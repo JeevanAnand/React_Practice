@@ -6,6 +6,8 @@ class LoginForm extends Component {
   handleSubmmit = (fobj) => {
     fobj.preventDefault();
     console.log("Handling form submit ");
+    const username=this.username.current.value;
+    console.log(username);
   };
 
   componentDidMount() {
