@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 const Pagination = (props) => {
 
     const {itemCount,pageSize,currentPage,onPageChange} = props;
-    const pageCount = Math.ceil(props.itemCount / props.pageSize);
+    const pageCount = Math.ceil(itemCount / pageSize);
     // console.log(pageCount);
     if(pageCount === 1) return null;
     const pages = _.range(1, pageCount + 1);//this returns an array
@@ -15,13 +15,15 @@ const Pagination = (props) => {
 
     return ( 
         <nav>
-            <ul className='pagination nav justify-content-center'>
+
+            <ul className='pagination '>
+                 {/* nav justify-content-center */}
                 {pages.map(page => (
                     <li 
                         key={page} 
-                         className={page === props.currentPage ? "page-item active" : "page-item"}>
+                         className={page === currentPage ? "page-item active" : "page-item"}>
                              <a 
-                                onClick={()=>props.onPageChange(page)}
+                                onClick={()=>onPageChange(page)}
                                 className="page-link">
                                     {page}
                             </a>
