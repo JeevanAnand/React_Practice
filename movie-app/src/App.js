@@ -13,6 +13,7 @@ import MoviesForm from './components/movieForm';
 import LoginForm from './components/loginForm';
 import RegisterForm from './components/registerForm';
 
+
 function App() {
   return (
     <React.Fragment>
